@@ -1,0 +1,35 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.assignment2">
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/Theme.Assignment2"
+        android:supportsRtl="true">
+
+        <!-- MainActivity: the launcher activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <!-- Mark this as the LAUNCHER (entry point) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- SecondAcctivity: must be declared! -->
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true">
+            <!-- For my implicit intent using com.example.assignment2.SHOW_CHALLENGES -->
+            <intent-filter>
+                <action android:name="com.example.assignment2.SHOW_CHALLENGES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
