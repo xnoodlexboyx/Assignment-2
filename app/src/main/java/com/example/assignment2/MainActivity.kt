@@ -45,7 +45,7 @@ fun MainScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Display da full name and student ID
-        Text(text = "Isaac Fuchs - 1417876")
+        Text(text = "Isaac F - 1417876")
 
         Spacer(modifier = Modifier.height(20.dp))
 
