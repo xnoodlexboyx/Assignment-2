@@ -44,12 +44,12 @@ fun MainScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Display the full name and student ID
-        Text(text = "Isaac F - 1412323")
+        // Show name & student ID (not very secure tho)
+        Text(text = "Isaac Fuchs - 1417876")
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Button to start SecondActivity EXPLICITLY
+        // Assignment 2: Explicit Intent is right hereeee
         Button(onClick = {
             val explicitIntent = Intent(context, SecondActivity::class.java)
             context.startActivity(explicitIntent)
@@ -59,13 +59,22 @@ fun MainScreen() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Button to start SecondActivity IMPLICITLY
+        // Assignment 2: Implicit Intent
         Button(onClick = {
-            // gotta match <intent-filter> action in SecondActivity
             val implicitIntent = Intent("com.example.assignment2.SHOW_CHALLENGES")
             context.startActivity(implicitIntent)
         }) {
             Text("Start Activity Implicitly")
+        }
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // Assignment 4: Go to ThirdActivity
+        Button(onClick = {
+            val thirdIntent = Intent(context, ThirdActivity::class.java)
+            context.startActivity(thirdIntent)
+        }) {
+            Text("View Image Activity")
         }
     }
 }

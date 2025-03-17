@@ -25,13 +25,11 @@ class SecondActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SecondScreen(
-                        onReturnToMain = {
-                            // Return to the MainActivity
-                            val mainIntent = Intent(this, MainActivity::class.java)
-                            startActivity(mainIntent)
-                        }
-                    )
+                    SecondScreen(onReturnToMain = {
+                        // Return to MainActivity
+                        val mainIntent = Intent(this, MainActivity::class.java)
+                        startActivity(mainIntent)
+                    })
                 }
             }
         }
@@ -50,7 +48,6 @@ fun SecondScreen(onReturnToMain: () -> Unit) {
         Text("Mobile Software Engineering Challenges:")
         Spacer(modifier = Modifier.height(20.dp))
 
-        // 5 challenges
         Text("1. Battery & Resource Optimization")
         Text("2. Supporting Various Screen Sizes")
         Text("3. Security & Data Privacy")
