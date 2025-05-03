@@ -1,6 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.assignment2">
+
+    <!-- Define the custom permission with dangerous protection level -->
+    <permission
+        android:name="com.example.assignment2.MSE412"
+        android:protectionLevel="dangerous"
+        android:label="MSE412 Permission" />
+    <!-- Removed the android:description attribute that was causing me errors earlier -->
+
+    <!-- Declare that this app uses the permission -->
+    <uses-permission android:name="com.example.assignment2.MSE412" />
 
     <application
         android:allowBackup="true"
@@ -17,17 +28,18 @@
             </intent-filter>
         </activity>
 
-        <!-- SecondActivity (Assignment 2) -->
+        <!-- SecondActivity (Assignment 2) - Protected with custom permission -->
         <activity
             android:name=".SecondActivity"
-            android:exported="true">
+            android:exported="true"
+            android:permission="com.example.assignment2.MSE412">
             <intent-filter>
                 <action android:name="com.example.assignment2.SHOW_CHALLENGES"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
-        <!-- ThirdActivity (Assignmennt 4) -->
+        <!-- ThirdActivity (Assignment 4) -->
         <activity
             android:name=".ThirdActivity"
             android:exported="true" />
@@ -35,4 +47,3 @@
     </application>
 
 </manifest>
-
